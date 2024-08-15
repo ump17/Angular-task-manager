@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input , Output, EventEmitter} from '@angular/core';
 
 interface Task{
   id: string;
@@ -18,5 +18,10 @@ export class TaskComponent {
 
 
 @Input() task!: Task;
+@Output() userToBeDeleted = new EventEmitter<string>();
+
+deleteTask(id: string){
+  this.userToBeDeleted.emit(id);
+}
 
 }

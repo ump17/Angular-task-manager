@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { TaskComponent } from "./task/task.component";
+import { TaskComponent } from './task/task.component';
 
 @Component({
   selector: 'user-task',
@@ -8,13 +8,11 @@ import { TaskComponent } from "./task/task.component";
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.css',
 })
+export class TasksComponent {
+  @Input({ required: true }) userId!: string;
+  @Input({ required: true }) taskName!: string;
 
-export class TasksComponent
-{
-  @Input({required: true }) userId!: string;
-  @Input({ required: true }) taskName!:string;
-
-   dummyTasks = [
+  dummyTasks = [
     {
       id: 't1',
       userId: 'u1',
@@ -38,14 +36,13 @@ export class TasksComponent
         'Prepare and describe an issue template which will help with project management',
       dueDate: '2024-06-15',
     },
-  ]
+  ];
 
-  get selectedUsersTask(){
-    //return this.dummyTasks.filter((task)=> task.userId === this.userId);
-
-    return this.dummyTasks.filter((task)=>{
-       task.userId === this.userId
-    })
+  get selectedUsersTask() {
+    return this.dummyTasks.filter((task) => task.userId === this.userId);
   }
 
+  deleteThisUser(id: string){
+    this.dummyTasks = this.dummyTasks.filter((task)=> task.id !== id);
+  }
 }

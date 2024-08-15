@@ -12,6 +12,7 @@
       <li>
         <app-task
         [task]="task"
+        (userToBeDeleted)="deleteThisUser($event)"
         ></app-task>
       </li>
       }

@@ -17,7 +17,7 @@ export class AppComponent {
 
   selectedUserId?: string;
 
-  onSelectUser(id: string) {
+  onSelectUserTest(id: string) {
     this.selectedUserId = id;
     console.log('user selected is' + id);
   }
