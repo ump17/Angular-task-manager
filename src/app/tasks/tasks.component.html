@@ -1,9 +1,13 @@
+@if (addTaskButtonClicked) {
+    <app-added-task (cancel)="clickedCancelOnDialog()" (add)="onAddTask($event)"></app-added-task>
+}
+
 <div>
   <section id="tasks">
     <header>
       <h2>{{taskName}}'s Tasks</h2>
       <menu>
-        <button>Add Task</button>
+        <button (click)="addTask()">Add Task</button>
       </menu>
     </header>
 
@@ -17,5 +21,6 @@
       </li>
       }
     </ul>
+
   </section>
 </div>
