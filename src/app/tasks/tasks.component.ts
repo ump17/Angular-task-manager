@@ -18,15 +18,15 @@ export class TasksComponent {
   @Input() addTaskButtonClicked: boolean = false;
 
   //Dependency Injection
-  constructor(private tasksService: TasksService){}
+  constructor(private tasksService: TasksService) {}
 
   get selectedUsersTask() {
     return this.tasksService.getUserTasks(this.userId);
   }
 
-  deleteThisUser(id: string) {
-    return this.tasksService.removeTask(id);
-  }
+  // deleteThisUser(id: string) {
+  //   return this.tasksService.removeTask(id);
+  // }
 
   addTask() {
     this.addTaskButtonClicked = true;
@@ -36,8 +36,9 @@ export class TasksComponent {
     this.addTaskButtonClicked = false;
   }
 
-  onAddTask(taskData: NewTaskData) {
-    this.tasksService.addTask(taskData, this.userId);
-    this.addTaskButtonClicked = false;
-  }
+  //Already handled it in - AddedTaskComponent file
+  // onAddTask(taskData: NewTaskData) {
+  //   this.tasksService.addTask(taskData, this.userId);
+  //   this.addTaskButtonClicked = false;
+  // }
 }

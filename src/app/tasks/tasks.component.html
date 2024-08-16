@@ -1,5 +1,5 @@
 @if (addTaskButtonClicked) {
-    <app-added-task (cancel)="clickedCancelOnDialog()" (add)="onAddTask($event)"></app-added-task>
+    <app-added-task [userId]="userId" (close)="clickedCancelOnDialog()"></app-added-task>
 }
 
 <div>
@@ -16,7 +16,6 @@
       <li>
         <app-task
         [task]="task"
-        (userToBeDeleted)="deleteThisUser($event)"
         ></app-task>
       </li>
       }
