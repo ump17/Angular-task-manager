@@ -6,8 +6,8 @@ import { TasksService } from './tasks.service';
 
 @Component({
   selector: 'user-task',
-  standalone: true,
-  imports: [TaskComponent, AddedTaskComponent],
+  standalone: false,
+ // imports: [TaskComponent, AddedTaskComponent],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.css',
 })
